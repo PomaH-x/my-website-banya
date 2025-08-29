@@ -368,6 +368,11 @@ class Gallery {
         this.lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
         
+        // Очищаем предыдущие классы анимации
+        if (this.lightboxImg) {
+            this.lightboxImg.classList.remove('changing');
+        }
+        
         // Небольшая задержка для плавного появления
         setTimeout(() => {
             this.showImage();
@@ -378,16 +383,34 @@ class Gallery {
         this.lightbox.classList.remove('active');
         document.body.style.overflow = '';
         
-        // Сбрасываем изображение
+        // Сбрасываем изображение и очищаем классы
         if (this.lightboxImg) {
             this.lightboxImg.style.opacity = '0';
             this.lightboxImg.style.transform = 'scale(0.8)';
+            this.lightboxImg.classList.remove('changing');
+            
+            // Очищаем src через некоторое время
+            setTimeout(() => {
+                this.lightboxImg.src = '';
+            }, 300);
         }
     }
 
     showImage() {
         if (this.lightboxImg && this.currentImages[this.currentIndex]) {
-            this.lightboxImg.src = this.currentImages[this.currentIndex];
+            // Добавляем анимацию перехода
+            this.lightboxImg.classList.add('changing');
+            
+            setTimeout(() => {
+                this.lightboxImg.src = this.currentImages[this.currentIndex];
+                
+                // После загрузки убираем анимацию перехода
+                this.lightboxImg.onload = () => {
+                    setTimeout(() => {
+                        this.lightboxImg.classList.remove('changing');
+                    }, 50);
+                };
+            }, 100);
         }
     }
 
@@ -490,18 +513,19 @@ class LazyLoader {
 // ===== ANIMATIONS ON SCROLL =====
 class ScrollAnimations {
     constructor() {
-        this.elements = $$('.advantage-card, .fact, .object__section');
+        this.elements = $$('.advantage-card, .fact, .object__section, .object__hero, .object__info-block');
         this.init();
     }
 
     init() {
         if ('IntersectionObserver' in window) {
             this.observer = new IntersectionObserver(this.handleIntersection.bind(this), {
-                threshold: 0.1,
-                rootMargin: '-50px'
+                threshold: 0.15,
+                rootMargin: '-30px'
             });
 
             this.elements.forEach(el => {
+                el.classList.add('smooth-appear');
                 this.observer.observe(el);
             });
         }
@@ -510,7 +534,9 @@ class ScrollAnimations {
     handleIntersection(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('fade-in-up');
+                setTimeout(() => {
+                    entry.target.classList.add('visible');
+                }, 100);
                 this.observer.unobserve(entry.target);
             }
         });
