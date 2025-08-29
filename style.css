@@ -1253,6 +1253,65 @@ h3 {
     transition: all 0.2s ease;
 }
 
+.lightbox__image.slide-next {
+    animation: slideFromRight 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lightbox__image.slide-prev {
+    animation: slideFromLeft 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.lightbox__image.fade-out {
+    animation: fadeOutScale 0.3s ease-in forwards;
+}
+
+/* Предотвращаем конфликты анимаций */
+.lightbox__image.slide-next,
+.lightbox__image.slide-prev {
+    animation-fill-mode: forwards;
+}
+
+/* Убеждаемся что базовые стили не конфликтуют */
+.lightbox__image {
+    will-change: transform, opacity;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    transform-style: preserve-3d;
+}
+
+@keyframes slideFromRight {
+    0% {
+        opacity: 0;
+        transform: translateX(50px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        opacity: 0;
+        transform: translateX(-50px) scale(0.9);
+    }
+    100% {
+        opacity: 1;
+        transform: translateX(0) scale(1);
+    }
+}
+
+@keyframes fadeOutScale {
+    0% {
+        opacity: 1;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
 .lightbox__close {
     position: absolute;
     top: 20px;
