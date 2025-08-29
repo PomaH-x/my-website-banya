@@ -362,17 +362,30 @@ class Gallery {
 
     openLightbox(gallery, index) {
         const items = gallery.querySelectorAll('.gallery__item');
-        this.currentImages = Array.from(items).map(item => item.dataset.src || item.querySelector('img').src);
+        this.currentImages = Array.from(items).map(item => {
+            const img = item.querySelector('img');
+            return item.dataset.src || (img ? img.src : '');
+        });
         this.currentIndex = index;
-        
+
         this.lightbox.classList.add('active');
         document.body.style.overflow = 'hidden';
-        
-        // Очищаем предыдущие классы анимации
+
+        // Полностью сбрасываем состояние изображения
         if (this.lightboxImg) {
-            this.lightboxImg.classList.remove('changing');
+            // Очищаем все классы анимации
+            this.lightboxImg.classList.remove('changing', 'slide-next', 'slide-prev', 'fade-out');
+
+            // Сбрасываем стили
+            this.lightboxImg.style.opacity = '0';
+            this.lightboxImg.style.transform = 'scale(0.8)';
+
+            // Очищаем src если нужно
+            if (this.lightboxImg.src) {
+                this.lightboxImg.src = '';
+            }
         }
-        
+
         // Небольшая задержка для плавного появления
         setTimeout(() => {
             this.showImage();
@@ -382,46 +395,125 @@ class Gallery {
     closeLightbox() {
         this.lightbox.classList.remove('active');
         document.body.style.overflow = '';
-        
+
         // Сбрасываем изображение и очищаем классы
         if (this.lightboxImg) {
-            this.lightboxImg.style.opacity = '0';
-            this.lightboxImg.style.transform = 'scale(0.8)';
+            this.lightboxImg.classList.add('fade-out');
             this.lightboxImg.classList.remove('changing');
-            
-            // Очищаем src через некоторое время
+
+            // Очищаем src и классы через некоторое время
             setTimeout(() => {
                 this.lightboxImg.src = '';
+                this.lightboxImg.style.opacity = '0';
+                this.lightboxImg.style.transform = 'scale(0.8)';
+                this.lightboxImg.classList.remove('fade-out');
             }, 300);
         }
     }
 
     showImage() {
         if (this.lightboxImg && this.currentImages[this.currentIndex]) {
-            // Добавляем анимацию перехода
-            this.lightboxImg.classList.add('changing');
-            
+            // Добавляем анимацию перехода только если нет других анимаций
+            if (!this.lightboxImg.classList.contains('slide-next') && !this.lightboxImg.classList.contains('slide-prev')) {
+                this.lightboxImg.classList.add('changing');
+            }
+
+            // Сохраняем текущий индекс для обработки загрузки
+            const currentImageIndex = this.currentIndex;
+
             setTimeout(() => {
-                this.lightboxImg.src = this.currentImages[this.currentIndex];
-                
-                // После загрузки убираем анимацию перехода
-                this.lightboxImg.onload = () => {
-                    setTimeout(() => {
-                        this.lightboxImg.classList.remove('changing');
-                    }, 50);
+                // Устанавливаем новое изображение
+                this.lightboxImg.src = this.currentImages[currentImageIndex];
+
+                // Обработчик загрузки изображения
+                const handleImageLoad = () => {
+                    // Убеждаемся что это всё ещё нужное изображение
+                    if (this.currentIndex === currentImageIndex) {
+                        // Убираем анимации загрузки через небольшую задержку
+                        setTimeout(() => {
+                            this.lightboxImg.classList.remove('changing');
+                            this.lightboxImg.style.opacity = '1';
+                            this.lightboxImg.style.transform = 'scale(1)';
+
+                            // Очищаем классы анимаций через некоторое время
+                            setTimeout(() => {
+                                this.lightboxImg.classList.remove('slide-next', 'slide-prev');
+                            }, 400);
+                        }, 50);
+                    }
+                    // Убираем обработчик
+                    this.lightboxImg.removeEventListener('load', handleImageLoad);
                 };
-            }, 100);
+
+                // Обработчик ошибки загрузки
+                const handleImageError = () => {
+                    console.error('Ошибка загрузки изображения:', this.currentImages[currentImageIndex]);
+                    if (this.currentIndex === currentImageIndex) {
+                        this.lightboxImg.classList.remove('changing', 'slide-next', 'slide-prev');
+                        this.lightboxImg.style.opacity = '1';
+                        this.lightboxImg.style.transform = 'scale(1)';
+                    }
+                    this.lightboxImg.removeEventListener('error', handleImageError);
+                };
+
+                // Добавляем обработчики
+                this.lightboxImg.addEventListener('load', handleImageLoad);
+                this.lightboxImg.addEventListener('error', handleImageError);
+
+                // Fallback на случай если изображение уже загружено
+                if (this.lightboxImg.complete && this.lightboxImg.src === this.currentImages[currentImageIndex]) {
+                    handleImageLoad();
+                }
+            }, 50);
+        } else {
+            console.warn('Изображение не найдено:', this.currentImages[this.currentIndex]);
         }
     }
 
     nextImage() {
+        // Очищаем предыдущие анимации
+        if (this.lightboxImg) {
+            this.lightboxImg.classList.remove('slide-prev', 'slide-next');
+            // Принудительно вызываем reflow для сброса анимации
+            void this.lightboxImg.offsetHeight;
+        }
+
         this.currentIndex = (this.currentIndex + 1) % this.currentImages.length;
+
+        // Добавляем анимацию после обновления индекса
+        if (this.lightboxImg) {
+            this.lightboxImg.classList.add('slide-next');
+        }
+
         this.showImage();
+
+        // Добавляем тактильную обратную связь
+        if ('vibrate' in navigator) {
+            navigator.vibrate(50);
+        }
     }
 
     prevImage() {
+        // Очищаем предыдущие анимации
+        if (this.lightboxImg) {
+            this.lightboxImg.classList.remove('slide-prev', 'slide-next');
+            // Принудительно вызываем reflow для сброса анимации
+            void this.lightboxImg.offsetHeight;
+        }
+
         this.currentIndex = (this.currentIndex - 1 + this.currentImages.length) % this.currentImages.length;
+
+        // Добавляем анимацию после обновления индекса
+        if (this.lightboxImg) {
+            this.lightboxImg.classList.add('slide-prev');
+        }
+
         this.showImage();
+
+        // Добавляем тактильную обратную связь
+        if ('vibrate' in navigator) {
+            navigator.vibrate(50);
+        }
     }
 }
 
