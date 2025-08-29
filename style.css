@@ -212,10 +212,6 @@ h3 {
     transition: all 0.3s ease;
 }
 
-.logo:hover {
-    transform: scale(1.05);
-}
-
 .nav__list {
     display: flex;
     list-style: none;
@@ -374,6 +370,12 @@ h3 {
     z-index: 2;
     text-align: center;
     color: white;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(8px);
+    border-radius: 20px;
+    padding: 3rem 2rem;
+    max-width: 800px;
+    margin: 0 auto;
 }
 
 .hero__title {
@@ -399,6 +401,11 @@ h3 {
     .hero {
         height: 80vh;
         min-height: 500px;
+    }
+    
+    .hero__content {
+        padding: 2rem 1.5rem;
+        margin: 0 1rem;
     }
     
     .hero__cta {
@@ -593,6 +600,7 @@ h3 {
 .object__hero-image {
     border-radius: 20px;
     overflow: hidden;
+    object-fit: cover;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.1);
 }
 
@@ -616,6 +624,7 @@ h3 {
 
 .object__section-title {
     margin-bottom: 1.5rem;
+    text-align: center;
 }
 
 .object__text {
@@ -877,6 +886,8 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 1.5rem;
+    align-items: center;
+    text-align: center;
 }
 
 .map-section {
@@ -890,8 +901,10 @@ h3 {
     position: relative;
     border-radius: 16px;
     overflow: hidden;
-    aspect-ratio: 16/10;
+    aspect-ratio: 16/8;
     background: #f5f5f5;
+    max-width: 600px;
+    width: 100%;
 }
 
 .map-placeholder img {
@@ -922,6 +935,8 @@ h3 {
     display: flex;
     flex-direction: column;
     gap: 1rem;
+    align-items: center;
+    max-width: 400px;
 }
 
 .map-section-new .map-info {
@@ -932,16 +947,18 @@ h3 {
     order: 2;
 }
 
+/* Убираем кнопку Открыть в Яндекс.Картах */
 .map-section-new .map-link {
-    order: 3;
-    align-self: flex-start;
+    display: none;
 }
 
 .map-info__item {
+    text-align: center;
     padding: 1rem;
     background: rgba(255, 255, 255, 0.7);
     border-radius: 12px;
     line-height: 1.5;
+    width: 100%;
 }
 
 .map-link {
@@ -1219,7 +1236,7 @@ h3 {
     max-height: 90%;
     object-fit: contain;
     border-radius: 12px;
-    transition: all 0.3s ease;
+    transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
     opacity: 0;
     transform: scale(0.8);
 }
@@ -1227,6 +1244,13 @@ h3 {
 .lightbox.active .lightbox__image {
     opacity: 1;
     transform: scale(1);
+}
+
+/* Анимация перелистывания в lightbox */
+.lightbox__image.changing {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.2s ease;
 }
 
 .lightbox__close {
@@ -1305,8 +1329,30 @@ h3 {
     }
 }
 
+@keyframes smoothFadeIn {
+    0% {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
 .fade-in-up {
     animation: fadeInUp 0.6s ease forwards;
+}
+
+.smooth-appear {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.smooth-appear.visible {
+    opacity: 1;
+    transform: translateY(0);
 }
 
 /* ===== UTILITIES ===== */
@@ -1335,11 +1381,13 @@ h3 {
     }
 }
 
-/* ===== FOCUS STYLES ===== */
+/* ===== FOCUS STYLES - REMOVED ===== */
 a:focus,
-button:focus {
-    outline: 2px solid #D98A2A;
-    outline-offset: 2px;
+button:focus,
+input:focus,
+textarea:focus {
+    outline: none;
+    box-shadow: none;
 }
 
 /* ===== HIGH CONTRAST ===== */
