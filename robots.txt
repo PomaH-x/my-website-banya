@@ -1,0 +1,28 @@
+User-agent: *
+Allow: /
+
+# Основные страницы
+Allow: /index.html
+Allow: /style.css
+Allow: /main.js
+
+# Изображения
+Allow: /img/
+
+# Sitemap
+Sitemap: https://bpk.ru/sitemap.xml
+
+# Запрещаем индексацию служебных файлов
+Disallow: /*.log$
+Disallow: /tmp/
+Disallow: /cache/
+
+# Специфичные директивы для поисковых роботов
+User-agent: Yandex
+Allow: /
+
+User-agent: Googlebot
+Allow: /
+
+# Краулинг-задержка (необязательно)
+Crawl-delay: 1

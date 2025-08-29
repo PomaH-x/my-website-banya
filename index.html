@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Банно-прачечный комбинат - Бани и прачечная в одном месте</title>
+    <meta name="description" content="Банно-прачечный комбинат: Баня на Садовой, Дубинские бани и современная прачечная. Теплый пар и профессиональная стирка - всё в одном месте.">
+    <meta name="keywords" content="баня, прачечная, Садовая, Дубинские бани, парная, стирка">
+    
+    <!-- Preload шрифтов -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- AOS Library -->
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css">
+    
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Плавающая CTA кнопка (мобайл) -->
+    <div class="floating-cta">
+        <a href="tel:+78001234567" class="floating-btn">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                <path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z" fill="currentColor"/>
+            </svg>
+        </a>
+    </div>
+
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <img src="img/logo.png" alt="Банно-прачечный комбинат" class="logo">
+                </div>
+                
+                <nav class="nav" id="nav">
+                    <ul class="nav__list">
+                        <li><a href="#sadovaya" class="nav__link">Баня на Садовой</a></li>
+                        <li><a href="#dubinka" class="nav__link">Дубинские бани</a></li>
+                        <li><a href="#prachechnaya" class="nav__link">Прачечная</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="header__cta">
+                    <a href="tel:+78001234567" class="btn btn--primary">Позвонить</a>
+                </div>
+                
+                <button class="mobile-menu-toggle" id="mobile-menu-toggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Мобильное меню -->
+        <div class="mobile-menu" id="mobile-menu">
+            <button class="mobile-menu__close" id="mobile-menu-close">&times;</button>
+            <div class="mobile-menu__content">
+                <nav class="mobile-nav">
+                    <ul class="mobile-nav__list">
+                        <li><a href="#sadovaya" class="mobile-nav__link">Баня на Садовой</a></li>
+                        <li><a href="#dubinka" class="mobile-nav__link">Дубинские бани</a></li>
+                        <li><a href="#prachechnaya" class="mobile-nav__link">Прачечная</a></li>
+                        <li><a href="#about" class="mobile-nav__link">О нас</a></li>
+                        <li><a href="#faq" class="mobile-nav__link">Вопросы</a></li>
+                        <li><a href="#contacts" class="mobile-nav__link">Контакты</a></li>
+                    </ul>
+                </nav>
+                
+                <div class="mobile-menu__contacts">
+                    <div class="mobile-menu__phone">
+                        <a href="tel:+78001234567">+7 (800) 123-45-67</a>
+                    </div>
+                    <a href="tel:+78001234567" class="btn btn--primary btn--large">Позвонить</a>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" id="hero">
+            <div class="hero__bg">
+                <img src="img/photo_2025-08-21_20-18-06.jpg" alt="Банно-прачечный комбинат" class="hero__bg-img">
+                <div class="hero__overlay"></div>
+            </div>
+            
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Банно-прачечный комбинат</h1>
+                    <p class="hero__subtitle">Теплый пар и профессиональная стирка — всё в одном месте</p>
+                    
+                    <div class="hero__cta">
+                        <a href="tel:+78001234567" class="btn btn--primary btn--large">Позвонить</a>
+                        <a href="#sadovaya" class="btn btn--secondary btn--large">Узнать подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- О комплексе -->
+        <section class="about" id="about">
+            <div class="container">
+                <div class="about__content">
+                    <h2 class="section-title">О комплексе</h2>
+                    <div class="about__text">
+                        <p>Банно-прачечный комбинат объединяет традиции русской бани и современные технологии профессиональной стирки. Мы работаем более 30 лет, предоставляя качественные услуги для жителей города.</p>
+                        <p>Наши объекты оснащены артезианской скважиной, что гарантирует чистую и мягкую воду для всех процедур. Профессиональные мастера и современное оборудование обеспечивают высокий уровень сервиса.</p>
+                    </div>
+                    
+
+                </div>
+            </div>
+        </section>
+
+        <!-- Преимущества -->
+        <section class="advantages" id="utp">
+            <div class="container">
+                <h2 class="section-title">Наши преимущества</h2>
+                
+                <div class="advantages__grid">
+                    <div class="advantage-card" data-aos="fade-up" data-aos-delay="100">
+                        <div class="advantage-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M24 4c-11 0-20 9-20 20 0 15 20 20 20 20s20-5 20-20c0-11-9-20-20-20z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="24" cy="24" r="6" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M16 32c2-2 4-4 8-4s6 2 8 4" stroke="currentColor" stroke-width="2"/>
+                            </svg>
+                        </div>
+                        <h3 class="advantage-card__title">Артезианская скважина</h3>
+                        <p class="advantage-card__text">Собственная артезианская скважина обеспечивает чистую и мягкую воду для всех процедур</p>
+                    </div>
+                    
+                    <div class="advantage-card" data-aos="fade-up" data-aos-delay="200">
+                        <div class="advantage-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M16 24l6 6 12-12" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+                                <path d="M24 8v4M24 36v4M8 24h4M36 24h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="advantage-card__title">Опыт и традиции</h3>
+                        <p class="advantage-card__text">Более 30 лет сохраняем традиции русской бани и совершенствуем качество услуг</p>
+                    </div>
+                    
+                    <div class="advantage-card" data-aos="fade-up" data-aos-delay="300">
+                        <div class="advantage-card__icon">
+                            <svg width="48" height="48" viewBox="0 0 48 48" fill="none">
+                                <path d="M8 32h32v8a4 4 0 0 1-4 4H12a4 4 0 0 1-4-4v-8z" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M12 32V20c0-6.627 5.373-12 12-12s12 5.373 12 12v12" stroke="currentColor" stroke-width="2"/>
+                                <path d="M16 12c1-2 3-4 6-4M32 12c-1-2-3-4-6-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M20 36h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3 class="advantage-card__title">Настоящая парная</h3>
+                        <p class="advantage-card__text">Традиционные парные с правильным паром и профессиональными банщиками</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Баня на Садовой -->
+        <section class="object object--sadovaya" id="sadovaya">
+            <div class="container">
+                <!-- Hero подсекция объекта -->
+                <div class="object__hero">
+                    <div class="object__hero-content">
+                        <h2 class="object__title">Баня на Садовой</h2>
+                        <p class="object__subtitle">Традиционная русская баня в самом центре города</p>
+                        
+                        <div class="object__contacts">
+                            <div class="contact-item">
+                                <a href="tel:+78001234567" class="contact-phone">+7 (800) 123-45-67</a>
+                            </div>
+                            <div class="contact-item">
+                                <a href="https://wa.me/78001234567" class="btn btn--whatsapp" target="_blank">
+                                    <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+                                        <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893A11.821 11.821 0 0020.885 3.488"/>
+                                    </svg>
+                                    Написать в WhatsApp
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="object__hero-image">
+                        <img src="img/photo_2025-08-21_20-18-26.jpg" alt="Баня на Садовой" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- О нас -->
+                <div class="object__section object__info-block">
+                    <h3 class="object__section-title">О нас</h3>
+                    <p class="object__text">Баня на Садовой — это место, где традиции русской бани сочетаются с современным комфортом. Расположенная в центре города, наша баня предлагает настоящий отдых от городской суеты в атмосфере тепла и уюта.</p>
+                </div>
+
+                <!-- История -->
+                <div class="object__section object__info-block">
+                    <h3 class="object__section-title">История</h3>
+                    <p class="object__text">Основанная более 35 лет назад, Баня на Садовой стала неотъемлемой частью городской культуры и традиций.</p>
+                </div>
+
+                <!-- Галерея -->
+                <div class="object__section">
+                    <h3 class="object__section-title">Галерея</h3>
+                    <div class="gallery" data-gallery="sadovaya">
+                        <div class="gallery__grid">
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_20-18-06.jpg">
+                                <img src="img/photo_2025-08-21_20-18-06.jpg" alt="Баня на Садовой" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_20-18-26.jpg">
+                                <img src="img/photo_2025-08-21_20-18-26.jpg" alt="Баня на Садовой" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_20-18-45.jpg">
+                                <img src="img/photo_2025-08-21_20-18-45.jpg" alt="Баня на Садовой" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_21-36-13.jpg">
+                                <img src="img/photo_2025-08-21_21-36-13.jpg" alt="Баня на Садовой" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_21-45-09.jpg">
+                                <img src="img/photo_2025-08-21_21-45-09.jpg" alt="Баня на Садовой" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_21-47-15.jpg">
+                                <img src="img/photo_2025-08-21_21-47-15.jpg" alt="Баня на Садовой" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Отзывы -->
+                <div class="object__section">
+                    <h3 class="object__section-title">Отзывы</h3>
+                    <div class="reviews-slider" data-slider="sadovaya">
+                        <div class="reviews-slider__container">
+                            <div class="review">
+                                <div class="review__stars">★★★★★</div>
+                                <p class="review__text">"Прекрасная баня! Настоящий русский пар, чистота и порядок. Ходим всей семьей уже много лет."</p>
+                                <div class="review__author">Анна Петрова</div>
+                            </div>
+                            <div class="review">
+                                <div class="review__stars">★★★★★</div>
+                                <p class="review__text">"Отличное место для отдыха! Профессиональные банщики, качественный веник, приятная атмосфера."</p>
+                                <div class="review__author">Михаил Иванов</div>
+                            </div>
+                            <div class="review">
+                                <div class="review__stars">★★★★☆</div>
+                                <p class="review__text">"Хорошая баня в центре города. Удобное расположение, качественные услуги."</p>
+                                <div class="review__author">Елена Сидорова</div>
+                            </div>
+                        </div>
+                        <button class="reviews-slider__btn reviews-slider__btn--prev">‹</button>
+                        <button class="reviews-slider__btn reviews-slider__btn--next">›</button>
+                    </div>
+                </div>
+
+                <!-- Карта -->
+                <div class="object__section">
+                    <h3 class="object__section-title">Как добраться</h3>
+                    <div class="map-section-new">
+                        <div class="map-info">
+                            <div class="map-info__item">
+                                <strong>Адрес:</strong> г. Город, ул. Садовая, 123
+                            </div>
+                            <div class="map-info__item">
+                                <strong>Режим работы:</strong> Ежедневно с 8:00 до 22:00
+                            </div>
+                        </div>
+                        <div class="map-placeholder" data-map="sadovaya">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDQwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0yMDAgMTI1TDIyMCAxMDVIMTgwTDIwMCAxMjVaIiBmaWxsPSIjRDk4QTJBIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEyNSIgcj0iOCIgZmlsbD0iI0Q5OEEyQSIvPgo8dGV4dCB4PSIyMDAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7QmtCw0YDRgtCwINGH0LDRgdGC0L7QstC+PC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjE4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7QndCw0LbQvNC40YLQtSDQtNC70Y8g0L7RgtC60YDRi9GC0LjRjzwvdGV4dD4KPHN2Zz4K" alt="Карта">
+                            <button class="map-load-btn" data-address="ул. Садовая, 123">Открыть карту</button>
+                        </div>
+                        <a href="https://yandex.ru/maps/?text=ул.+Садовая+123" target="_blank" class="map-link">Открыть в Яндекс.Картах</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Дубинские бани -->
+        <section class="object object--dubinka" id="dubinka">
+            <div class="container">
+                <!-- Hero подсекция объекта -->
+                <div class="object__hero">
+                    <div class="object__hero-content">
+                        <h2 class="object__title">Дубинские бани</h2>
+                        <p class="object__subtitle">Загородный комплекс с традиционными банями</p>
+                        
+                        <div class="object__contacts">
+                            <div class="contact-item">
+                                <a href="tel:+78001234568" class="contact-phone">+7 (800) 123-45-68</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="object__hero-image">
+                        <img src="img/photo_2025-08-21_21-52-20.jpg" alt="Дубинские бани" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- О нас -->
+                <div class="object__section object__info-block">
+                    <h3 class="object__section-title">О нас</h3>
+                    <p class="object__text">Дубинские бани — это загородный банный комплекс, где можно насладиться настоящим русским паром в окружении природы. Идеальное место для семейного отдыха и корпоративных мероприятий.</p>
+                </div>
+
+                <!-- История -->
+                <div class="object__section object__info-block">
+                    <h3 class="object__section-title">История</h3>
+                    <p class="object__text">Построенные в живописном месте, Дубинские бани сохраняют традиции деревенской бани в современном исполнении.</p>
+                </div>
+
+                <!-- Галерея -->
+                <div class="object__section">
+                    <h3 class="object__section-title">Галерея</h3>
+                    <div class="gallery" data-gallery="dubinka">
+                        <div class="gallery__grid">
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_21-52-20.jpg">
+                                <img src="img/photo_2025-08-21_21-52-20.jpg" alt="Дубинские бани" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_21-52-55.jpg">
+                                <img src="img/photo_2025-08-21_21-52-55.jpg" alt="Дубинские бани" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_21-54-42.jpg">
+                                <img src="img/photo_2025-08-21_21-54-42.jpg" alt="Дубинские бани" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_21-55-29.jpg">
+                                <img src="img/photo_2025-08-21_21-55-29.jpg" alt="Дубинские бани" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_21-56-32.jpg">
+                                <img src="img/photo_2025-08-21_21-56-32.jpg" alt="Дубинские бани" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_21-57-33.jpg">
+                                <img src="img/photo_2025-08-21_21-57-33.jpg" alt="Дубинские бани" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Отзывы -->
+                <div class="object__section">
+                    <h3 class="object__section-title">Отзывы</h3>
+                    <div class="reviews-slider" data-slider="dubinka">
+                        <div class="reviews-slider__container">
+                            <div class="review">
+                                <div class="review__stars">★★★★★</div>
+                                <p class="review__text">"Замечательное место для отдыха на природе! Чистый воздух, отличные бани, приятная атмосфера."</p>
+                                <div class="review__author">Сергей Волков</div>
+                            </div>
+                            <div class="review">
+                                <div class="review__stars">★★★★★</div>
+                                <p class="review__text">"Провели корпоратив — все остались довольны! Хорошее обслуживание, качественный пар."</p>
+                                <div class="review__author">Ольга Кузнецова</div>
+                            </div>
+                            <div class="review">
+                                <div class="review__stars">★★★★☆</div>
+                                <p class="review__text">"Красивое место, хорошие бани. Немного далековато от города, но оно того стоит."</p>
+                                <div class="review__author">Дмитрий Морозов</div>
+                            </div>
+                        </div>
+                        <button class="reviews-slider__btn reviews-slider__btn--prev">‹</button>
+                        <button class="reviews-slider__btn reviews-slider__btn--next">›</button>
+                    </div>
+                </div>
+
+                <!-- Карта -->
+                <div class="object__section">
+                    <h3 class="object__section-title">Как добраться</h3>
+                    <div class="map-section-new">
+                        <div class="map-info">
+                            <div class="map-info__item">
+                                <strong>Адрес:</strong> пос. Дубинка, ул. Лесная, 45
+                            </div>
+                            <div class="map-info__item">
+                                <strong>Режим работы:</strong> Ежедневно с 9:00 до 23:00
+                            </div>
+                        </div>
+                        <div class="map-placeholder" data-map="dubinka">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDQwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0yMDAgMTI1TDIyMCAxMDVIMTgwTDIwMCAxMjVaIiBmaWxsPSIjRDk4QTJBIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEyNSIgcj0iOCIgZmlsbD0iI0Q5OEEyQSIvPgo8dGV4dCB4PSIyMDAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7QmtCw0YDRgtCwINGH0LDRgdGC0L7QstC+PC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjE4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7QndCw0LbQvNC40YLQtSDQtNC70Y8g0L7RgtC60YDRi9GC0LjRjzwvdGV4dD4KPHN2Zz4K" alt="Карта">
+                            <button class="map-load-btn" data-address="пос. Дубинка, 45">Открыть карту</button>
+                        </div>
+                        <a href="https://yandex.ru/maps/?text=пос.+Дубинка+ул.+Лесная+45" target="_blank" class="map-link">Открыть в Яндекс.Картах</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Прачечная -->
+        <section class="object object--prachechnaya" id="prachechnaya">
+            <div class="container">
+                <!-- Hero подсекция объекта -->
+                <div class="object__hero">
+                    <div class="object__hero-content">
+                        <h2 class="object__title">Прачечная</h2>
+                        <p class="object__subtitle">Современная профессиональная прачечная</p>
+                        
+                        <div class="object__contacts">
+                            <div class="contact-item">
+                                <a href="tel:+78001234569" class="contact-phone">+7 (800) 123-45-69</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="object__hero-image">
+                        <img src="img/photo_2025-08-23_08-47-46.jpg" alt="Прачечная" loading="lazy">
+                    </div>
+                </div>
+
+                <!-- О нас -->
+                <div class="object__section object__info-block">
+                    <h3 class="object__section-title">О нас</h3>
+                    <p class="object__text">Современная прачечная с профессиональным оборудованием обеспечивает качественную стирку и чистку различных типов тканей. Используем только экологичные моющие средства и технологии бережной обработки.</p>
+                </div>
+
+                <!-- История -->
+                <div class="object__section object__info-block">
+                    <h3 class="object__section-title">История</h3>
+                    <p class="object__text">Прачечная работает как часть комплекса уже более 20 лет, постоянно модернизируя оборудование и совершенствуя технологии.</p>
+                </div>
+
+                <!-- Галерея -->
+                <div class="object__section">
+                    <h3 class="object__section-title">Галерея</h3>
+                    <div class="gallery" data-gallery="prachechnaya">
+                        <div class="gallery__grid">
+                            <div class="gallery__item" data-src="img/photo_2025-08-23_08-47-46.jpg">
+                                <img src="img/photo_2025-08-23_08-47-46.jpg" alt="Прачечная" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_22-02-14.jpg">
+                                <img src="img/photo_2025-08-21_22-02-14.jpg" alt="Прачечная" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_22-06-59.jpg">
+                                <img src="img/photo_2025-08-21_22-06-59.jpg" alt="Прачечная" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_22-13-59.jpg">
+                                <img src="img/photo_2025-08-21_22-13-59.jpg" alt="Прачечная" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_22-14-57.jpg">
+                                <img src="img/photo_2025-08-21_22-14-57.jpg" alt="Прачечная" loading="lazy">
+                            </div>
+                            <div class="gallery__item" data-src="img/photo_2025-08-21_22-15-46.jpg">
+                                <img src="img/photo_2025-08-21_22-15-46.jpg" alt="Прачечная" loading="lazy">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Отзывы -->
+                <div class="object__section">
+                    <h3 class="object__section-title">Отзывы</h3>
+                    <div class="reviews-slider" data-slider="prachechnaya">
+                        <div class="reviews-slider__container">
+                            <div class="review">
+                                <div class="review__stars">★★★★★</div>
+                                <p class="review__text">"Отличное качество стирки! Вещи возвращают чистыми и свежими. Быстро и недорого."</p>
+                                <div class="review__author">Мария Николаева</div>
+                            </div>
+                            <div class="review">
+                                <div class="review__stars">★★★★★</div>
+                                <p class="review__text">"Сдаю сюда постельное белье и верхнюю одежду. Всегда качественная стирка, приятные цены."</p>
+                                <div class="review__author">Алексей Петров</div>
+                            </div>
+                            <div class="review">
+                                <div class="review__stars">★★★★☆</div>
+                                <p class="review__text">"Хорошая прачечная, современное оборудование. Удобно, что работают каждый день."</p>
+                                <div class="review__author">Татьяна Соколова</div>
+                            </div>
+                        </div>
+                        <button class="reviews-slider__btn reviews-slider__btn--prev">‹</button>
+                        <button class="reviews-slider__btn reviews-slider__btn--next">›</button>
+                    </div>
+                </div>
+
+                <!-- Карта -->
+                <div class="object__section">
+                    <h3 class="object__section-title">Как добраться</h3>
+                    <div class="map-section-new">
+                        <div class="map-info">
+                            <div class="map-info__item">
+                                <strong>Адрес:</strong> г. Город, ул. Промышленная, 78
+                            </div>
+                            <div class="map-info__item">
+                                <strong>Режим работы:</strong> Пн-Сб с 8:00 до 20:00, Вс с 9:00 до 18:00
+                            </div>
+                        </div>
+                        <div class="map-placeholder" data-map="prachechnaya">
+                            <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iNDAwIiBoZWlnaHQ9IjI1MCIgdmlld0JveD0iMCAwIDQwMCAyNTAiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxyZWN0IHdpZHRoPSI0MDAiIGhlaWdodD0iMjUwIiBmaWxsPSIjRjVGNUY1Ii8+CjxwYXRoIGQ9Ik0yMDAgMTI1TDIyMCAxMDVIMTgwTDIwMCAxMjVaIiBmaWxsPSIjRDk4QTJBIi8+CjxjaXJjbGUgY3g9IjIwMCIgY3k9IjEyNSIgcj0iOCIgZmlsbD0iI0Q5OEEyQSIvPgo8dGV4dCB4PSIyMDAiIHk9IjE2MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjE0IiBmaWxsPSIjNjY2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7QmtCw0YDRgtCwINGH0LDRgdGC0L7QstC+PC90ZXh0Pgo8dGV4dCB4PSIyMDAiIHk9IjE4MCIgZm9udC1mYW1pbHk9IkFyaWFsIiBmb250LXNpemU9IjEyIiBmaWxsPSIjOTk5IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIj7QndCw0LbQvNC40YLQtSDQtNC70Y8g0L7RgtC60YDRi9GC0LjRjzwvdGV4dD4KPHN2Zz4K" alt="Карта">
+                            <button class="map-load-btn" data-address="ул. Промышленная, 78">Открыть карту</button>
+                        </div>
+                        <a href="https://yandex.ru/maps/?text=ул.+Промышленная+78" target="_blank" class="map-link">Открыть в Яндекс.Картах</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="faq" id="faq">
+            <div class="container">
+                <h2 class="section-title">Часто задаваемые вопросы</h2>
+                
+                <div class="faq__list">
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Какие услуги входят в банный комплекс?</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>В наш комплекс входят две бани (на Садовой и Дубинские), а также современная прачечная. Мы предлагаем традиционные банные процедуры, парение с вениками, а также профессиональную стирку и чистку одежды.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Нужно ли бронировать заранее?</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Рекомендуем бронировать заранее, особенно на выходные и праздничные дни. Вы можете забронировать по телефону или через WhatsApp для Бани на Садовой.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Что нужно взять с собой в баню?</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Необходимо иметь при себе полотенце, сменную обувь и документ, удостоверяющий личность. Веники, шампуни и другие принадлежности можно приобрести на месте.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Какие виды стирки доступны в прачечной?</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Мы предлагаем стирку повседневной одежды, постельного белья, верхней одежды, а также деликатную чистку специальных тканей. Используем современное оборудование и экологичные моющие средства.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="faq__item">
+                        <button class="faq__question" aria-expanded="false">
+                            <span>Есть ли скидки для постоянных клиентов?</span>
+                            <span class="faq__icon">+</span>
+                        </button>
+                        <div class="faq__answer">
+                            <p>Да, мы предлагаем систему скидок для постоянных клиентов. Подробности уточняйте у администраторов наших объектов.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer" id="contacts">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <div class="footer__logo">
+                        <img src="img/logo.png" alt="Банно-прачечный комбинат" class="footer__logo-img">
+                    </div>
+                    <p class="footer__text">Теплый пар и профессиональная стирка — всё в одном месте</p>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Навигация</h4>
+                    <ul class="footer__nav">
+                        <li><a href="#sadovaya">Баня на Садовой</a></li>
+                        <li><a href="#dubinka">Дубинские бани</a></li>
+                        <li><a href="#prachechnaya">Прачечная</a></li>
+                        <li><a href="#about">О нас</a></li>
+                        <li><a href="#faq">Вопросы</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer__section">
+                    <h4 class="footer__subtitle">Контакты</h4>
+                    <div class="footer__contacts">
+                        <div class="footer__contact">
+                            <span>Баня на Садовой:</span>
+                            <a href="tel:+78001234567">+7 (800) 123-45-67</a>
+                        </div>
+                        <div class="footer__contact">
+                            <span>Дубинские бани:</span>
+                            <a href="tel:+78001234568">+7 (800) 123-45-68</a>
+                        </div>
+                        <div class="footer__contact">
+                            <span>Прачечная:</span>
+                            <a href="tel:+78001234569">+7 (800) 123-45-69</a>
+                        </div>
+                    </div>
+                </div>
+                
+
+            </div>
+            
+            <div class="footer__bottom">
+                <p>&copy; 2025 МУП "Снежинка". Все права защищены.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Lightbox -->
+    <div class="lightbox" id="lightbox">
+        <div class="lightbox__overlay"></div>
+        <div class="lightbox__content">
+            <button class="lightbox__close">&times;</button>
+            <button class="lightbox__nav lightbox__nav--prev">‹</button>
+            <button class="lightbox__nav lightbox__nav--next">›</button>
+            <img class="lightbox__image" src="" alt="">
+        </div>
+    </div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="main.js"></script>
+</body>
+</html>
